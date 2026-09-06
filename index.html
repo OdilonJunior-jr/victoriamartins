@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Conheça os modelos artesanais da Victoria Martins Ateliê e envie sua encomenda pelo WhatsApp.">
+<meta name="theme-color" content="#f6efe3">
+<title>Victoria Martins Ateliê — Experiência</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap');
+:root{--cream:#f6efe3;--paper:#fffaf2;--ink:#3d2d23;--brown:#7b421e;--olive:#66704a;--shadow:0 22px 60px rgba(75,47,25,.15)}
+*{box-sizing:border-box} html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--cream);color:var(--ink)}
+body{font-family:Manrope,system-ui,sans-serif} button{font:inherit;color:inherit} button:focus-visible{outline:2px solid var(--brown);outline-offset:4px}
+.texture{position:fixed;inset:0;pointer-events:none;opacity:.42;background:repeating-linear-gradient(0deg,rgba(120,88,52,.022),rgba(120,88,52,.022) 1px,transparent 1px,transparent 4px),repeating-linear-gradient(90deg,rgba(120,88,52,.018),rgba(120,88,52,.018) 1px,transparent 1px,transparent 5px);z-index:100}
+.scene{position:fixed;inset:0;display:grid;place-items:center;opacity:0;visibility:hidden;transform:scale(.985) translateY(12px);transition:opacity .55s ease, transform .55s ease, visibility .55s;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+.scene.active{opacity:1;visibility:visible;transform:none}
+.topbar{position:absolute;left:18px;right:18px;top:18px;display:flex;justify-content:space-between;align-items:center;z-index:9}
+.icon-btn{width:44px;height:44px;border-radius:50%;border:1px solid rgba(86,55,31,.18);background:rgba(255,250,242,.82);backdrop-filter:blur(12px);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 26px rgba(67,39,17,.08)}
+.icon-btn svg{width:20px;height:20px}.kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#816b5b}.title{font-family:"Cormorant Garamond",serif;font-size:clamp(42px,7vw,90px);font-weight:500;line-height:.88;margin:0}.mini{font-size:13px;line-height:1.7;color:#756456}
+#intro{padding:0;background:#f7efe4;overflow:hidden;cursor:pointer} .intro-stage{position:relative;width:min(560px,80vw);aspect-ratio:1/1}.intro-floral{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}.intro-wordmark{position:absolute;left:50%;top:50%;width:min(58%,325px);height:auto;object-fit:contain;display:block;transform:translate(-50%,-50%) scale(.985);transform-origin:center center}.intro-floral{opacity:0;transform:scale(.93)}.intro-wordmark{opacity:0;transform:translate(-50%,-50%) scale(.94)}#intro.active .intro-floral{animation:introPlants 1.05s .18s forwards cubic-bezier(.18,.8,.22,1)}#intro.active .intro-wordmark{animation:introWords .85s 1.05s forwards cubic-bezier(.2,.75,.2,1)}@keyframes introPlants{to{opacity:1;transform:scale(1)}}@keyframes introWords{to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+#home{padding:0;background:#d9c2a7;overflow:hidden}.home-bg{position:absolute;inset:0;z-index:0}.home-bg picture,.home-bg img{display:block;width:100%;height:100%}.home-bg img{object-fit:cover;object-position:center center}.home-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(53,32,16,.02),rgba(53,32,16,.04));pointer-events:none}
+.home-ui{position:absolute;z-index:4;left:50%;top:28.5%;transform:translate(-50%,-50%);width:min(900px,92vw);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.home-logo{width:min(280px,24vw);display:block;margin-bottom:12px;opacity:0;transform:translateY(-8px) scale(.96);filter:drop-shadow(0 7px 16px rgba(58,33,15,.15))}
+#home.active .home-logo{animation:homeLogo .72s .12s forwards cubic-bezier(.2,.8,.2,1)}
+.home-actions{margin-top:0;width:min(690px,100%);display:grid;grid-template-columns:repeat(2,minmax(220px,300px));gap:12px 18px;align-items:center;justify-content:center;justify-items:center;opacity:0;transform:translateY(8px)}
+#home.active .home-actions{animation:homeItems .62s .48s forwards ease}.home-btn{border:0;background:transparent;padding:0;width:100%;max-width:300px;height:auto;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s ease,filter .2s ease}.home-btn img{display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(65,39,18,.10))}.home-btn:hover{transform:translateY(-2px) scale(1.02)}.home-btn:active{transform:scale(.985)}.home-tagline{position:absolute;z-index:4;left:50%;bottom:max(28px,env(safe-area-inset-bottom));transform:translateX(-50%);width:max-content;max-width:min(600px,80vw);margin:0;text-align:center;font-family:Manrope,system-ui,sans-serif;font-size:clamp(16px,1.25vw,20px);font-weight:500;line-height:1.35;color:#6e4c32;letter-spacing:.015em;text-shadow:0 1px 0 rgba(255,250,242,.55);opacity:0;padding:11px 20px;border-radius:18px;background:rgba(255,248,239,.42);backdrop-filter:blur(6px);box-shadow:0 10px 24px rgba(92,56,27,.08)}#home.active .home-tagline{animation:homeTagline .62s .68s forwards ease}.home-tagline strong{font-weight:700;color:#7b421e}@keyframes homeLogo{to{opacity:1;transform:none}}@keyframes homeItems{to{opacity:1;transform:none}}@keyframes homeTagline{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+#catalog{background:#f4ede2}
+#order{background:linear-gradient(135deg,#f8f0e4,#efe1cf)}.order-shell{width:min(900px,100%);min-height:min(680px,88vh);background:rgba(255,250,242,.88);border:1px solid rgba(97,63,35,.12);border-radius:34px;box-shadow:var(--shadow);padding:58px;position:relative;backdrop-filter:blur(8px)}.order-step{display:none;animation:fade .35s ease}.order-step.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(10px)}}.stepnum{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#9a7c65;margin-bottom:12px}.order-shell .title{font-size:clamp(48px,6vw,78px)}.choices{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}.choice{border:1px solid rgba(91,56,30,.18);background:#fffaf4;padding:15px 18px;border-radius:999px;cursor:pointer;transition:.2s}.choice:hover,.choice.selected{background:#6f482d;color:white;border-color:#6f482d}.order-next{position:absolute;right:54px;bottom:42px;border:0;background:#6f482d;color:#fff7eb;padding:14px 20px;border-radius:999px;cursor:pointer}.order-next:disabled{opacity:.35;cursor:not-allowed}.summary{margin-top:26px;padding:24px;border:1px dashed rgba(98,61,32,.3);border-radius:20px;background:#fffaf3;font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.45}.copy-btn{border:0;background:var(--olive);color:white;padding:14px 18px;border-radius:999px;cursor:pointer;margin-top:18px}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:#3f3127;color:#fff8ee;padding:12px 18px;border-radius:999px;font-size:12px;opacity:0;pointer-events:none;transition:.3s;z-index:999}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (max-width:760px){#intro{padding:0}.intro-stage{width:min(86vw,440px)}.scene{padding:14px}.topbar{top:14px;left:14px;right:14px}#home{padding:0}.home-bg img{object-position:center center}.home-overlay{background:linear-gradient(to bottom,rgba(45,29,17,0) 0%,rgba(45,29,17,.015) 58%,rgba(45,29,17,.07) 100%)}.home-ui{left:50%;top:28.5%;width:min(300px,88vw);transform:translate(-50%,-50%)}.home-logo{width:min(170px,42vw);margin-bottom:6px}.home-actions{margin-top:0;grid-template-columns:1fr;gap:4px;width:min(220px,66vw)}.home-btn{max-width:220px}.home-btn img{width:100%;height:auto;max-width:220px}.home-tagline{bottom:max(18px,env(safe-area-inset-bottom));width:min(290px,84vw);max-width:none;font-size:13px;line-height:1.35;padding:10px 13px;border-radius:14px}.order-shell{min-height:92vh;padding:78px 24px 90px;border-radius:26px}.order-shell .title{font-size:50px}.order-next{right:24px;bottom:24px}}
+@media (min-width:761px) and (max-height:760px){.home-ui{top:31%;transform:translate(-50%,-50%) scale(.9)}.home-tagline{bottom:18px}.intro-stage{width:min(500px,76vw)}}
+
+/* Estruturas preparadas para coleções maiores */
+.home-tagline{font-style:italic;font-weight:400}.home-tagline strong{display:inline-block;margin:0 .08em;font-family:Allura,cursive;font-style:normal;font-size:1.62em;font-weight:400;line-height:.75;color:#7b421e;transform:translateY(.08em)}
+.catalog-shell{width:min(1040px,100%);height:min(720px,84vh);overflow:auto;padding:46px 24px 24px;scrollbar-width:thin}.collection-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:0 0 22px}.collection-head .title{font-size:clamp(42px,5vw,64px)}.collection-head .mini{max-width:390px}.catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.product-name{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600}.status{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#7b421e}.order-shell{width:min(600px,92vw);min-height:410px;padding:34px 36px 68px;border-radius:24px}.order-shell .title{font-size:clamp(36px,4vw,50px);line-height:.92}.order-shell .stepnum{margin-bottom:8px}.choices{gap:7px;margin-top:18px}.choice{padding:10px 14px;font-size:14px}.order-next{right:32px;bottom:22px;padding:12px 18px}.summary{margin-top:14px;padding:15px;font-size:18px}
+.model-card{background:#fffaf2;border-radius:20px;overflow:hidden;box-shadow:0 12px 34px rgba(75,47,25,.12);max-width:250px}.model-photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:opacity .18s ease}.model-info{padding:13px 14px 14px}.model-title-row{display:flex;align-items:center;justify-content:space-between;gap:8px}.model-colors{display:flex;align-items:center;gap:9px;margin-top:11px}.model-color{width:26px;height:26px;border-radius:50%;border:3px solid #fffaf2;box-shadow:0 0 0 1px rgba(61,45,35,.25);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}.model-color:hover{transform:scale(1.1)}.model-color.active{box-shadow:0 0 0 2px #7b421e;transform:scale(1.08)}.model-color-name{margin-left:3px;font-size:12px;color:#756456}.model-consult{width:100%;margin-top:12px;border:1px solid rgba(91,56,30,.2);border-radius:999px;background:#fff7ec;padding:10px 12px;font-size:12px;font-weight:600;cursor:pointer}.model-consult:hover{background:#f4e4cf}
+.home-actions{width:min(300px,100%);grid-template-columns:1fr;gap:8px}.whatsapp-quick{position:absolute;z-index:5;left:50%;bottom:max(86px,calc(env(safe-area-inset-bottom) + 58px));transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(83,60,40,.28);border-radius:999px;background:rgba(255,250,242,.76);backdrop-filter:blur(8px);padding:10px 16px;color:#5f4635;font-size:13px;font-weight:600;cursor:pointer;box-shadow:0 8px 20px rgba(75,47,25,.08);transition:transform .2s ease,background .2s ease}.whatsapp-quick:hover{transform:translate(-50%,-2px);background:#fffaf2}.whatsapp-quick svg{width:18px;height:18px;fill:#477d55}.catalog-grid .model-card{max-width:none}
+@media (max-width:760px){.catalog-shell{height:86vh;padding:64px 4px 24px}.collection-head{display:block;margin:0 6px 16px}.collection-head .title{font-size:42px}.collection-head .mini{margin-top:6px}.home-actions{grid-template-columns:1fr;width:min(220px,66vw)}.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-name{font-size:19px}.status{display:block;margin-top:2px}.model-card{max-width:none;border-radius:15px}.model-colors{gap:7px}.model-color{width:24px;height:24px}.model-color-name{display:none}.order-shell{width:90vw;min-height:54vh;padding:58px 16px 64px;border-radius:20px}.order-shell .title{font-size:36px}.choices{gap:6px;margin-top:16px}.choice{padding:9px 12px;font-size:12px}.order-next{right:16px;bottom:18px;padding:11px 16px}.summary{margin-top:12px;font-size:16px;padding:12px}}
+</style>
+</head>
+<body>
+<div class="texture"></div>
+<section id="intro" class="scene active" aria-label="Introdução Victoria Martins Ateliê"><div class="intro-stage" aria-hidden="true"><img class="intro-floral" src="assets/floral-transparent.png" alt=""><img class="intro-wordmark" src="assets/wordmark-transparent.png" alt=""></div></section>
+<section id="home" class="scene"><div class="home-bg"><picture><source media="(max-width:760px)" srcset="assets/hero-mobile.png"><img src="assets/hero-desktop.png" alt="Ateliê artesanal Victoria Martins"></picture><div class="home-overlay"></div></div><div class="home-ui"><img class="home-logo" src="assets/logo-transparent.png" alt="Victoria Martins Ateliê"><div class="home-actions" aria-label="Acessos do ateliê"><button class="home-btn" data-go="catalog" aria-label="Catálogo"><img src="assets/btn_catalogo.png" alt="Catálogo"></button><button class="home-btn" data-go="order" aria-label="Encomendar"><img src="assets/btn_encomendar.png" alt="Encomendar"></button></div></div><button class="whatsapp-quick" id="whatsappHome" aria-label="Fale com a Victoria pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.84 9.84 0 0 0-8.39 14.98L2 22l5.18-1.62A9.98 9.98 0 1 0 12.04 2Zm0 17.98a8 8 0 0 1-4.08-1.12l-.29-.17-3.07.96 1-2.98-.19-.31A7.94 7.94 0 1 1 12.04 20Zm4.38-5.94c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19-.71-.64-1.2-1.42-1.34-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.09 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>Fale com a Victoria</span></button><div class="home-tagline">Do fio à peça: <strong>criações artesanais</strong> para vestir sua essência.</div></section>
+<section id="catalog" class="scene"><div class="topbar"><button class="icon-btn" data-go="home" aria-label="Voltar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg></button><span class="kicker">arquivo do ateliê</span></div><div class="catalog-shell"><div class="collection-head"><div><div class="kicker">catálogo vivo</div><h2 class="title">Modelos do ateliê.</h2></div><p class="mini">Cada card representa um modelo. Toque nas cores para ver as variações.</p></div><div class="catalog-grid"><article class="model-card" data-piece="Top Trama" data-color="Preto"><img class="model-photo" src="assets/black.jpg" alt="Top Trama na cor preta"><div class="model-info"><div class="model-title-row"><span class="product-name">Top Trama</span><span class="status">consultar</span></div><div class="model-colors" aria-label="Cores do Top Trama"><button class="model-color active" data-src="assets/black.jpg" data-color="Preto" style="background:#171514" aria-label="Ver Top Trama em preto"></button><button class="model-color" data-src="assets/silver.jpg" data-color="Prata" style="background:#b8b7b2" aria-label="Ver Top Trama em prata"></button><button class="model-color" data-src="assets/gold.jpg" data-color="Dourado" style="background:#c89944" aria-label="Ver Top Trama em dourado"></button><button class="model-color" data-src="assets/brown.jpg" data-color="Marrom" style="background:#5f382b" aria-label="Ver Top Trama em marrom"></button><span class="model-color-name">Preto</span></div><button class="model-consult">Consultar esta peça</button></div></article></div></div></section>
+<section id="order" class="scene"><div class="topbar"><button class="icon-btn" data-go="home" aria-label="Voltar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg></button><span class="kicker">encomenda guiada</span></div><div class="order-shell"><div class="order-step active" data-step="0"><div class="stepnum">01 — sua ideia</div><h2 class="title">O que você<br>quer criar?</h2><div class="choices" data-key="peca"><button class="choice">Top</button><button class="choice">Conjunto</button><button class="choice">Vestido</button><button class="choice">Saída de praia</button><button class="choice">Tenho uma referência</button></div></div><div class="order-step" data-step="1"><div class="stepnum">02 — a cor</div><h2 class="title">Qual cor<br>combina com você?</h2><div class="choices" data-key="cor"><button class="choice">Preto</button><button class="choice">Branco / prata</button><button class="choice">Dourado</button><button class="choice">Marrom</button><button class="choice">Quero outra cor</button></div></div><div class="order-step" data-step="2"><div class="stepnum">03 — tamanho</div><h2 class="title">Qual é o seu<br>tamanho?</h2><div class="choices" data-key="tamanho"><button class="choice">PP</button><button class="choice">P</button><button class="choice">M</button><button class="choice">G</button><button class="choice">GG</button><button class="choice">Enviar minhas medidas</button></div></div><div class="order-step" data-step="3"><div class="stepnum">seu bilhete de encomenda</div><h2 class="title">Pronto para<br>a Victoria.</h2><div class="summary" id="summary"></div><button class="copy-btn" id="copyOrder">Enviar pelo WhatsApp</button><div class="note">Seu pedido será enviado pronto para a conversa.</div></div><button class="order-next" id="orderNext" disabled>continuar →</button></div></section>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const scenes = [...document.querySelectorAll('.scene')];
+function go(id){ scenes.forEach(s => s.classList.toggle('active', s.id === id)); }
+
+document.addEventListener('click', (e) => {
+  const trigger = e.target.closest('[data-go]');
+  if (trigger) go(trigger.dataset.go);
+  if (e.target.closest('#intro')) go('home');
+});
+
+setTimeout(() => {
+  if (document.querySelector('#intro.active')) go('home');
+}, 2600);
+
+const WHATSAPP_NUMBER = '';
+function openWhatsApp(message = 'Olá, Victoria! Vim pelo seu ateliê digital e gostaria de conversar.') {
+  if (!WHATSAPP_NUMBER) {
+    toast('Só falta adicionar o número do WhatsApp da Victoria.');
+    return;
+  }
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+}
+
+document.getElementById('whatsappHome').onclick = () => openWhatsApp();
+document.querySelectorAll('.model-card').forEach((card) => {
+  const photo = card.querySelector('.model-photo');
+  const colorName = card.querySelector('.model-color-name');
+  card.querySelectorAll('.model-color').forEach((color) => {
+    color.onclick = () => {
+      card.querySelectorAll('.model-color').forEach((item) => item.classList.remove('active'));
+      color.classList.add('active');
+      card.dataset.color = color.dataset.color;
+      photo.style.opacity = '.25';
+      setTimeout(() => {
+        photo.src = color.dataset.src;
+        photo.alt = `${card.dataset.piece} na cor ${color.dataset.color.toLowerCase()}`;
+        colorName.textContent = color.dataset.color;
+        photo.style.opacity = '1';
+      }, 140);
+    };
+  });
+  card.querySelector('.model-consult').onclick = () => openWhatsApp(`Olá, Victoria! Gostei da peça ${card.dataset.piece} na cor ${card.dataset.color} e queria saber mais.`);
+});
+
+let step = 0;
+const answers = {};
+const next = document.getElementById('orderNext');
+const orderSteps = [...document.querySelectorAll('.order-step')];
+
+function showStep(n){
+  step = n;
+  orderSteps.forEach((s, i) => s.classList.toggle('active', i === n));
+  next.style.display = n === 3 ? 'none' : 'block';
+  next.disabled = n < 3 && !answers[['peca', 'cor', 'tamanho'][n]];
+  if (n === 3) {
+    document.getElementById('summary').innerHTML = `<strong>Peça:</strong> ${answers.peca}<br><strong>Cor:</strong> ${answers.cor}<br><strong>Tamanho:</strong> ${answers.tamanho}<br><br>“Oi Victoria! Quero fazer uma encomenda e escolhi essas opções no seu ateliê digital.”`;
+  }
+}
+
+document.querySelectorAll('.choices').forEach((group) => {
+  const key = group.dataset.key;
+  group.querySelectorAll('.choice').forEach((btn) => {
+    btn.onclick = () => {
+      group.querySelectorAll('.choice').forEach((x) => x.classList.remove('selected'));
+      btn.classList.add('selected');
+      answers[key] = btn.textContent.trim();
+      next.disabled = false;
+    };
+  });
+});
+
+next.onclick = () => showStep(Math.min(step + 1, 3));
+
+document.getElementById('copyOrder').onclick = () => {
+  const text = `Oi Victoria! Quero fazer uma encomenda.\nPeça: ${answers.peca}\nCor: ${answers.cor}\nTamanho: ${answers.tamanho}`;
+  openWhatsApp(text);
+};
+
+function toast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(window.__toast);
+  window.__toast = setTimeout(() => el.classList.remove('show'), 3000);
+}
+</script>
+</body></html>
